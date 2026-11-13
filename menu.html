@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Empanada & Latin Street Food Kitchen</title>
+    <!-- Exact Title Icon Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='120' fill='url(%23grad)'/><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23F59E0B'/><stop offset='100%' stop-color='%23D9381E'/></linearGradient></defs><path fill='%23ffffff' d='M256 112c-35 55-64 88-64 136 0 35.3 28.7 64 64 64s64-28.7 64-64c0-48-29-81-64-136z'/></svg>">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        latinRed: '#D9381E',
+                        latinAmber: '#F59E0B',
+                        latinDark: '#121212',
+                        latinCard: '#1E1E1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+        }
+        .font-serif-luxury {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom Scrollbar for Dropdown & Menus */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D9381E;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-latinDark dark:text-slate-100 transition-colors duration-300">
+
+    <!-- ================= ADVANCED FLOATING NAVBAR ================= -->
+    <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-8">
+        <nav class="max-w-7xl mx-auto bg-white/90 dark:bg-latinDark/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl px-5 py-3.5 flex items-center justify-between transition-all">
+            
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-latinRed to-latinAmber flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-latinRed/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif-luxury text-lg font-bold tracking-tight text-slate-900 dark:text-white leading-none">Fuego & Masa</span>
+                    <span class="text-[10px] uppercase tracking-widest text-latinRed font-semibold mt-0.5">Latin Street Kitchen</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex items-center gap-1 font-semibold text-sm">
+                <!-- Home Dropdown -->
+                <div class="relative group">
+                    <button class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition flex items-center gap-1.5">
+                        Home <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <!-- Dropdown Menu with Scrollbar -->
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-700 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50 max-h-60 overflow-y-auto">
+                        <a href="index.html" class="block px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-xs font-semibold transition">Home 1 - Signature Fillings</a>
+                        <a href="home-2.html" class="block px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-xs font-semibold transition">Home 2 - Street Vibe</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">About</a>
+                <!-- Active Menu State Styling Added -->
+                <a href="menu.html" class="px-4 py-2 rounded-xl bg-latinRed/10 text-latinRed dark:text-latinAmber font-bold transition">Menu</a>
+                <a href="fillings.html" class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Fillings</a>
+                <a href="catering.html" class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Catering Orders</a>
+                <a href="contact.html" class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Contact</a>
+            </div>
+
+            <!-- Right Utilities & Action Button (Desktop) -->
+            <div class="hidden lg:flex items-center gap-3">
+                <!-- RTL Toggle Button -->
+                <button onclick="toggleRTL()" class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold uppercase hover:bg-latinRed hover:text-white transition shadow-sm" title="Toggle RTL/LTR">
+                    <span id="rtlBtnText">RTL</span>
+                </button>
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center hover:bg-latinRed hover:text-white transition shadow-sm" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+                <!-- CTA Button -->
+                <a href="catering.html" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-latinRed to-latinAmber text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-latinRed/30 hover:shadow-latinRed/50 hover:scale-[1.02] active:scale-[0.98] transition">
+                    Order Catering
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <div class="flex items-center gap-2 lg:hidden">
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white flex items-center justify-center text-lg focus:outline-none">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer Navigation with Theme & RTL Toggles inside -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-2 bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-5 max-h-[85vh] overflow-y-auto transition-all">
+            <!-- Mobile Utilities Row (RTL & Dark/Light Toggle with Icons) -->
+            <div class="flex items-center justify-between gap-2 pb-4 mb-3 border-b border-slate-200 dark:border-slate-700">
+                <button onclick="toggleRTL()" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold uppercase tracking-wider hover:bg-latinRed hover:text-white transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-globe"></i> <span id="mobileRtlText">Switch RTL</span>
+                </button>
+                <button onclick="toggleTheme()" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold uppercase tracking-wider hover:bg-latinRed hover:text-white transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-half-stroke"></i> <span>Theme Mode</span>
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-2 font-semibold">
+                <div class="py-2 px-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl text-xs uppercase text-latinRed font-bold tracking-wider">Home Layouts</div>
+                <a href="index.html" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Home 1 - Signature Fillings</a>
+                <a href="home-2.html" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Home 2 - Street Vibe</a>
+                
+                <hr class="border-slate-200 dark:border-slate-700 my-1">
+                
+                <a href="about.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">About</a>
+                <a href="menu.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg bg-latinRed/10 text-latinRed text-sm font-bold">Menu (Active)</a>
+                <a href="fillings.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Fillings</a>
+                <a href="catering.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Catering Orders</a>
+                <a href="contact.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Contact</a>
+                
+                <div class="pt-3">
+                    <a href="catering.html" onclick="toggleMobileMenu()" class="block w-full py-3 text-center rounded-xl bg-gradient-to-r from-latinRed to-latinAmber text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-latinRed/30">
+                        Order Catering
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ================= CLEAN FULL-VIEWPORT HERO BACKGROUND IMAGE ================= -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900 text-white">
+        <!-- Hero Background Image with Dark Gradient Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- New HD Street Food Grill Image -->
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1920&q=80" alt="Latin Menu Hero Background" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-latinDark"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center py-32">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-latinRed/20 border border-latinRed/40 text-latinAmber text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
+                <i class="fa-solid fa-utensils"></i> Complete Culinary Offerings
+            </div>
+            
+            <h1 class="font-serif-luxury text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight max-w-4xl mx-auto mb-6">
+                Explore Our Artisan <span class="text-transparent bg-clip-text bg-gradient-to-r from-latinRed to-latinAmber">Menu & Fillings</span>
+            </h1>
+            
+            <p class="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+                Handcrafted golden empanadas, sizzling street platters, signature house dips, and refreshing Latin beverages prepared fresh daily from authentic family recipes.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#signature-empanadas" class="px-8 py-4 rounded-xl bg-gradient-to-r from-latinRed to-latinAmber text-white font-bold text-sm uppercase tracking-wider shadow-2xl shadow-latinRed/50 hover:scale-105 transition">
+                    View Menu Sections <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+                <a href="catering.html" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-sm uppercase tracking-wider transition">
+                    Catering Packages
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 1: SIGNATURE EMPANADAS (ENRICHED CONTENT) ================= -->
+    <section id="signature-empanadas" class="py-20 bg-white dark:bg-latinDark transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinRed text-xs font-bold uppercase tracking-widest block mb-2">Golden Crusts</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Signature Empanadas</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Flaky, hand-crimped pastry shells fried to golden perfection with rich savory centers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl hover:border-latinRed/50 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-6 shadow-md">
+                            <!-- Unique Fried Empanadas Image -->
+                            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80" alt="Beef Empanada" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-latinRed text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">Best Seller</span>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif-luxury text-lg font-bold text-slate-900 dark:text-white">Traditional Beef & Olive</h3>
+                            <span class="text-latinRed font-bold text-lg">$4.50</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Slow-braised ground beef, sweet Spanish onions, green olives, boiled egg, and authentic smoked paprika spices folded in golden pastry dough.</p>
+                        <!-- Added Expanded Content Details -->
+                        <div class="space-y-1.5 mb-6 text-[11px] text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/50">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-fire text-latinRed"></i> <span>Crispy fried on order (320 kcal)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-latinAmber"></i> <span>Served with house green chimichurri</span></div>
+                        </div>
+                    </div>
+                    <a href="catering.html" class="block w-full py-2.5 text-center rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-latinRed hover:text-white text-slate-800 dark:text-white font-bold text-xs uppercase tracking-wider transition">Order Online</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl hover:border-latinRed/50 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-6 shadow-md">
+                            <!-- Unique Spicy Pastry Image -->
+                            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Chicken Empanada" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-latinAmber text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">Spicy</span>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif-luxury text-lg font-bold text-slate-900 dark:text-white">Spicy Pollo Criollo</h3>
+                            <span class="text-latinRed font-bold text-lg">$4.25</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Shredded free-range chicken breast simmered in a vibrant bell pepper sofrito, jalapeños, and fresh cilantro herbs.</p>
+                        <!-- Added Expanded Content Details -->
+                        <div class="space-y-1.5 mb-6 text-[11px] text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/50">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-fire text-latinRed"></i> <span>Medium spice level (290 kcal)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-latinAmber"></i> <span>Pairs great with garlic cilantro aioli</span></div>
+                        </div>
+                    </div>
+                    <a href="catering.html" class="block w-full py-2.5 text-center rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-latinRed hover:text-white text-slate-800 dark:text-white font-bold text-xs uppercase tracking-wider transition">Order Online</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl hover:border-latinRed/50 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-6 shadow-md">
+                            <!-- Unique Cheesy Baked Pastry Image -->
+                            <img src="img/a1.webp" alt="Cheese Empanada" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-slate-900 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">Vegetarian</span>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif-luxury text-lg font-bold text-slate-900 dark:text-white">Tres Quesos & Corn</h3>
+                            <span class="text-latinRed font-bold text-lg">$4.00</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">A rich melted blend of mozzarella, sharp provolone, creamy cotija cheese, and sweet roasted sweet corn kernels.</p>
+                        <!-- Added Expanded Content Details -->
+                        <div class="space-y-1.5 mb-6 text-[11px] text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/50">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-fire text-latinRed"></i> <span>Baked or fried option (310 kcal)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-latinAmber"></i> <span>100% vegetarian cheese blend</span></div>
+                        </div>
+                    </div>
+                    <a href="catering.html" class="block w-full py-2.5 text-center rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-latinRed hover:text-white text-slate-800 dark:text-white font-bold text-xs uppercase tracking-wider transition">Order Online</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 2: ARTISAN FILLINGS & COMBOS (ENRICHED CONTENT) ================= -->
+    <section class="py-20 bg-slate-100 dark:bg-[#161616] transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinAmber text-xs font-bold uppercase tracking-widest block mb-2">Custom Pairings</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Artisan Fillings & Combos</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Mix and match your favorite empanada fillings or choose our curated meal combinations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Combo 1 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-latinRed/10 text-latinRed flex items-center justify-center text-xl mb-4 font-bold shadow-sm">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2">The Trio Box</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Choose any 3 signature empanadas served with crispy yuca fries and house chimichurri sauce.</p>
+                        <!-- Added Details -->
+                        <ul class="space-y-1 text-[11px] text-slate-500 dark:text-slate-400 mb-6">
+                            <li><i class="fa-solid fa-check text-latinRed mr-1.5"></i> Includes side yuca fries</li>
+                            <li><i class="fa-solid fa-check text-latinRed mr-1.5"></i> Choice of dipping sauce</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                        <span class="text-latinRed font-bold text-base">$13.50</span>
+                        <span class="text-[10px] uppercase font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md">Popular</span>
+                    </div>
+                </div>
+
+                <!-- Combo 2 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-latinAmber/10 text-latinAmber flex items-center justify-center text-xl mb-4 font-bold shadow-sm">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2">Fiesta Dozen Box</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">12 assorted party-size empanadas packed with mixed beef, chicken, cheese, and guava fillings.</p>
+                        <!-- Added Details -->
+                        <ul class="space-y-1 text-[11px] text-slate-500 dark:text-slate-400 mb-6">
+                            <li><i class="fa-solid fa-check text-latinAmber mr-1.5"></i> Perfect for group sharing</li>
+                            <li><i class="fa-solid fa-check text-latinAmber mr-1.5"></i> 3 large house dips included</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                        <span class="text-latinRed font-bold text-base">$42.00</span>
+                        <span class="text-[10px] uppercase font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md">Best Value</span>
+                    </div>
+                </div>
+
+                <!-- Combo 3 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-latinRed/10 text-latinRed flex items-center justify-center text-xl mb-4 font-bold shadow-sm">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2">Guava & Cheese Treat</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Sweet tropical guava paste folded with creamy farmer cheese inside a buttery dessert pastry crust.</p>
+                        <!-- Added Details -->
+                        <ul class="space-y-1 text-[11px] text-slate-500 dark:text-slate-400 mb-6">
+                            <li><i class="fa-solid fa-check text-latinRed mr-1.5"></i> Dusted with powdered sugar</li>
+                            <li><i class="fa-solid fa-check text-latinRed mr-1.5"></i> Warm gooey center</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                        <span class="text-latinRed font-bold text-base">$3.75</span>
+                        <span class="text-[10px] uppercase font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md">Dessert</span>
+                    </div>
+                </div>
+
+                <!-- Combo 4 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-latinAmber/10 text-latinAmber flex items-center justify-center text-xl mb-4 font-bold shadow-sm">
+                            <i class="fa-solid fa-pepper-hot"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2">Chorizo & Potato</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Spicy Argentine pork chorizo crumbled with tender roasted potato cubes and smoky Latin herbs.</p>
+                        <!-- Added Details -->
+                        <ul class="space-y-1 text-[11px] text-slate-500 dark:text-slate-400 mb-6">
+                            <li><i class="fa-solid fa-check text-latinAmber mr-1.5"></i> Authentic Argentine style</li>
+                            <li><i class="fa-solid fa-check text-latinAmber mr-1.5"></i> Savory & hearty bite</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                        <span class="text-latinRed font-bold text-base">$4.50</span>
+                        <span class="text-[10px] uppercase font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md">New Recipe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 3: LATIN STREET SIDES & DIPS (ENRICHED CONTENT WITH IMAGES) ================= -->
+    <section class="py-20 bg-white dark:bg-latinDark transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinRed text-xs font-bold uppercase tracking-widest block mb-2">Complements</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Latin Street Sides & House Dips</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Complete your street food feast with crispy yuca, sweet plantains, and signature sauces.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Side 1 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 shadow-md">
+                            <!-- Unique Thick Cut Fries Image -->
+                            <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=400&q=80" alt="Yuca Fries" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white">Crispy Yuca Fries</h3>
+                            <span class="text-latinRed font-bold text-base">$5.00</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Golden crispy cassava root sticks fried fresh and served with creamy garlic cilantro aioli.</p>
+                        <div class="text-[11px] text-latinAmber font-semibold flex items-center gap-1.5 mb-4">
+                            <i class="fa-solid fa-star"></i> <span>Hand-cut daily from tropical cassava roots</span>
+                        </div>
+                    </div>
+                    <a href="catering.html" class="block w-full py-2 text-center rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-latinRed hover:text-white text-slate-800 dark:text-white font-bold text-xs uppercase tracking-wider transition">Add to Order</a>
+                </div>
+
+                <!-- Side 2 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 shadow-md">
+                            <!-- Unique Fried Plantains Image -->
+                            <img src="img/s2.webp" alt="Maduros" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white">Sweet Maduros</h3>
+                            <span class="text-latinRed font-bold text-base">$4.50</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Caramelized sweet ripe plantain slices fried golden brown and finished with cotija cheese dusting.</p>
+                        <div class="text-[11px] text-latinAmber font-semibold flex items-center gap-1.5 mb-4">
+                            <i class="fa-solid fa-star"></i> <span>Naturally sweet & caramelized edges</span>
+                        </div>
+                    </div>
+                    <a href="catering.html" class="block w-full py-2 text-center rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-latinRed hover:text-white text-slate-800 dark:text-white font-bold text-xs uppercase tracking-wider transition">Add to Order</a>
+                </div>
+
+                <!-- Side 3 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 shadow-md">
+                            <!-- Unique Green Sauce / Chimichurri Image -->
+                            <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&w=400&q=80" alt="Chimichurri" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white">House Chimichurri</h3>
+                            <span class="text-latinRed font-bold text-base">$1.50</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Fresh hand-chopped parsley, garlic, oregano, red wine vinegar, and extra virgin olive oil.</p>
+                        <div class="text-[11px] text-latinAmber font-semibold flex items-center gap-1.5 mb-4">
+                            <i class="fa-solid fa-star"></i> <span>Secret family herb recipe blended fresh</span>
+                        </div>
+                    </div>
+                    <a href="catering.html" class="block w-full py-2 text-center rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-latinRed hover:text-white text-slate-800 dark:text-white font-bold text-xs uppercase tracking-wider transition">Add to Order</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 4: REFRESHING LATIN BEVERAGES (ENRICHED CONTENT WITH IMAGES) ================= -->
+    <section class="py-20 bg-slate-100 dark:bg-[#161616] transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinAmber text-xs font-bold uppercase tracking-widest block mb-2">Refreshments</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Refreshing Latin Beverages</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Quench your thirst with traditional tropical fruit juices and house-brewed iced drinks.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Bev 1 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 shadow-md">
+                            <!-- Unique Milky Iced Drink Image -->
+                            <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=400&q=80" alt="Horchata" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif-luxury text-lg font-bold text-slate-900 dark:text-white">Horchata Artesanal</h3>
+                            <span class="text-latinRed font-bold text-base">$3.75</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Creamy rice milk infused with cinnamon, vanilla bean, and toasted almonds served over crushed ice.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800 text-[10px] text-latinAmber font-bold uppercase">
+                        <span><i class="fa-solid fa-snowflake mr-1"></i> Chilled Daily</span>
+                        <span class="text-slate-400">16 oz glass</span>
+                    </div>
+                </div>
+
+                <!-- Bev 2 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 shadow-md">
+                            <!-- Unique Tropical Orange Drink Image -->
+                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80" alt="Passion Fruit" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif-luxury text-lg font-bold text-slate-900 dark:text-white">Maracuyá Passion Fruit</h3>
+                            <span class="text-latinRed font-bold text-base">$3.50</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Tangy and sweet tropical passion fruit juice extracted fresh from premium purple passion fruits.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800 text-[10px] text-latinAmber font-bold uppercase">
+                        <span><i class="fa-solid fa-snowflake mr-1"></i> Chilled Daily</span>
+                        <span class="text-slate-400">16 oz glass</span>
+                    </div>
+                </div>
+
+                <!-- Bev 3 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 shadow-md">
+                            <!-- Unique Red Iced Tea Image -->
+                            <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?auto=format&fit=crop&w=400&q=80" alt="Jamaica Tea" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif-luxury text-lg font-bold text-slate-900 dark:text-white">Hibiscus Jamaica Tea</h3>
+                            <span class="text-latinRed font-bold text-base">$3.25</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Deep ruby red iced herbal tea brewed from dried hibiscus flowers with a hint of fresh squeezed lime.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800 text-[10px] text-latinAmber font-bold uppercase">
+                        <span><i class="fa-solid fa-snowflake mr-1"></i> Chilled Daily</span>
+                        <span class="text-slate-400">16 oz glass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 5: CATERING & EVENT PACKAGES ================= -->
+    <section class="py-20 bg-white dark:bg-latinDark transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="bg-gradient-to-r from-latinRed to-latinAmber rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <div class="max-w-3xl relative z-10">
+                    <span class="bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block mb-4">Catering Services</span>
+                    <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold mb-4">Host Your Next Event With Fuego & Masa</h2>
+                    <p class="text-white/90 text-sm sm:text-base leading-relaxed mb-8">
+                        From corporate luncheons to family celebrations, our catering packages include freshly baked empanada trays, house sauces, yuca fries, and full setup assistance.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="catering.html" class="px-8 py-3.5 rounded-xl bg-white text-slate-900 font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition shadow-lg">
+                            Request Catering Quote
+                        </a>
+                        <a href="contact.html" class="px-8 py-3.5 rounded-xl bg-black/20 hover:bg-black/30 text-white font-bold text-xs uppercase tracking-wider transition border border-white/30">
+                            Speak With Coordinator
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 6: SIMPLE GALLERY SECTION ================= -->
+    <section class="py-20 bg-slate-100 dark:bg-[#161616] transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinRed text-xs font-bold uppercase tracking-widest block mb-2">Visual Showcase</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Kitchen & Culinary Gallery</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">A glimpse into our golden pastries, bustling kitchen, and vibrant Latin street eats.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="rounded-2xl overflow-hidden aspect-[1/1] shadow-lg group relative">
+                    <!-- Unique Food Spread Image -->
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <span class="text-white text-xs font-bold">Golden Hand-Crimped Crusts</span>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden aspect-[1/1] shadow-lg group relative">
+                    <!-- Unique Kitchen Prep Image -->
+                    <img src="img/s3.webp" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <span class="text-white text-xs font-bold">Freshly Baked Platters</span>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden aspect-[1/1] shadow-lg group relative">
+                    <!-- Unique Street Tacos Image -->
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <span class="text-white text-xs font-bold">Authentic Herb Chimichurri</span>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden aspect-[1/1] shadow-lg group relative">
+                    <!-- Unique Restaurant Vibe Image -->
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=500&q=80" alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <span class="text-white text-xs font-bold">Vibrant Culinary Dining</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= ADVANCED DARK FOOTER (MATCHING REFERENCE LAYOUT) ================= -->
+    <footer class="bg-[#0b0f17] text-slate-400 pt-16 pb-12 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-slate-800/60">
+                
+                <!-- Col 1: Brand Info & Social Icons -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-latinRed to-latinAmber flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-latinRed/30">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif-luxury text-lg font-bold text-white tracking-tight leading-none">Fuego & Masa</span>
+                            <span class="text-[10px] uppercase tracking-widest text-latinRed font-semibold mt-0.5">Latin Street Kitchen</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+                        Authentic Latin street food kitchen empowering your cravings with golden flaky pastries, rich slow-cooked fillings, and secret house chimichurri.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-latinRed hover:border-latinRed transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-latinRed hover:border-latinRed transition"><i class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-latinRed hover:border-latinRed transition"><i class="fa-brands fa-twitter text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Pages -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest">Pages</h4>
+                    <ul class="space-y-3 text-xs font-medium">
+                        <li><a href="index.html" class="hover:text-latinRed transition">Home-1 (Fillings)</a></li>
+                        <li><a href="home-2.html" class="hover:text-latinRed transition">Home-2 (Street Vibe)</a></li>
+                        <li><a href="about.html" class="hover:text-latinRed transition">About Us</a></li>
+                        <li><a href="menu.html" class="text-latinRed font-bold transition">Menu</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Tools & Info -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest">Tools & Info</h4>
+                    <ul class="space-y-3 text-xs font-medium">
+                        <li><a href="menu.html" class="hover:text-latinRed transition">Menu Comparison</a></li>
+                        <li><a href="catering.html" class="hover:text-latinRed transition">Catering Calculator</a></li>
+                        <li><a href="catering.html" class="hover:text-latinRed transition">Catering FAQs</a></li>
+                        <li><a href="contact.html" class="hover:text-latinRed transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Get in Touch -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest">Get in Touch</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="mailto:catering@fuegomasa.com" class="flex items-center gap-2.5 hover:text-latinRed transition">
+                                <i class="fa-solid fa-envelope text-latinRed text-sm w-4"></i> catering@fuegomasa.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:18003834627" class="flex items-center gap-2.5 hover:text-latinRed transition">
+                                <i class="fa-solid fa-phone text-latinRed text-sm w-4"></i> 1-800-FUEGO-MASA
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-location-dot text-latinRed text-sm w-4 mt-0.5"></i>
+                                <span class="leading-relaxed">450 Calle Sol, Suite 101, Culinary District, Miami, FL 33131</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Policies -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Empanada & Latin Street Food Kitchen. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Utilities -->
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+
+        // Dark/Light Theme Switcher
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        // RTL / LTR Switcher
+        function toggleRTL() {
+            const html = document.documentElement;
+            const btnText = document.getElementById('rtlBtnText');
+            const mobileRtlText = document.getElementById('mobileRtlText');
+            if (html.getAttribute('dir') === 'rtl') {
+                html.setAttribute('dir', 'ltr');
+                if(btnText) btnText.innerText = 'RTL';
+                if(mobileRtlText) mobileRtlText.innerText = 'Switch RTL';
+                localStorage.dir = 'ltr';
+            } else {
+                html.setAttribute('dir', 'rtl');
+                if(btnText) btnText.innerText = 'LTR';
+                if(mobileRtlText) mobileRtlText.innerText = 'Switch LTR';
+                localStorage.dir = 'rtl';
+            }
+        }
+
+        // Check initial theme preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Check initial RTL preference
+        if (localStorage.dir === 'rtl') {
+            document.documentElement.setAttribute('dir', 'rtl');
+            if(document.getElementById('rtlBtnText')) document.getElementById('rtlBtnText').innerText = 'LTR';
+            if(document.getElementById('mobileRtlText')) document.getElementById('mobileRtlText').innerText = 'Switch LTR';
+        }
+    </script>
+</body>
+</html>

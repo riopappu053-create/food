@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Empanada & Latin Street Food Kitchen</title>
+    <!-- Exact Title Icon Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='120' fill='url(%23grad)'/><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23F59E0B'/><stop offset='100%' stop-color='%23D9381E'/></linearGradient></defs><path fill='%23ffffff' d='M256 112c-35 55-64 88-64 136 0 35.3 28.7 64 64 64s64-28.7 64-64c0-48-29-81-64-136z'/></svg>">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        latinRed: '#D9381E',
+                        latinAmber: '#F59E0B',
+                        latinDark: '#121212',
+                        latinCard: '#1E1E1E',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+        }
+        .font-serif-luxury {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D9381E;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-latinDark dark:text-slate-100 transition-colors duration-300">
+
+    <!-- ================= ADVANCED FLOATING NAVBAR ================= -->
+    <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-8">
+        <nav class="max-w-7xl mx-auto bg-white/90 dark:bg-latinDark/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl px-5 py-3.5 flex items-center justify-between transition-all">
+            
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-latinRed to-latinAmber flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-latinRed/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif-luxury text-lg font-bold tracking-tight text-slate-900 dark:text-white leading-none">Fuego & Masa</span>
+                    <span class="text-[10px] uppercase tracking-widest text-latinRed font-semibold mt-0.5">Latin Street Kitchen</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex items-center gap-1 font-semibold text-sm">
+                <div class="relative group">
+                    <button class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition flex items-center gap-1.5">
+                        Home <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-700 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50 max-h-60 overflow-y-auto">
+                        <a href="index.html" class="block px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-xs font-semibold transition">Home 1 - Signature Fillings</a>
+                        <a href="home-2.html" class="block px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-xs font-semibold transition">Home 2 - Street Vibe</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">About</a>
+                <a href="menu.html" class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Menu</a>
+                <a href="fillings.html" class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Fillings</a>
+                <a href="catering.html" class="px-4 py-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-latinRed dark:hover:text-latinRed hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Catering Orders</a>
+                <a href="contact.html" class="px-4 py-2 rounded-xl bg-latinRed/10 text-latinRed dark:text-latinAmber font-bold transition">Contact</a>
+            </div>
+
+            <!-- Right Utilities & Action Button (Desktop) -->
+            <div class="hidden lg:flex items-center gap-3">
+                <button onclick="toggleRTL()" class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold uppercase hover:bg-latinRed hover:text-white transition shadow-sm" title="Toggle RTL/LTR">
+                    <span id="rtlBtnText">RTL</span>
+                </button>
+                <button onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center hover:bg-latinRed hover:text-white transition shadow-sm" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+                <a href="catering.html" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-latinRed to-latinAmber text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-latinRed/30 hover:shadow-latinRed/50 hover:scale-[1.02] active:scale-[0.98] transition">
+                    Order Catering
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <div class="flex items-center gap-2 lg:hidden">
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white flex items-center justify-center text-lg focus:outline-none">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-2 bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-5 max-h-[85vh] overflow-y-auto transition-all">
+            <div class="flex items-center justify-between gap-2 pb-4 mb-3 border-b border-slate-200 dark:border-slate-700">
+                <button onclick="toggleRTL()" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold uppercase tracking-wider hover:bg-latinRed hover:text-white transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-globe"></i> <span id="mobileRtlText">Switch RTL</span>
+                </button>
+                <button onclick="toggleTheme()" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold uppercase tracking-wider hover:bg-latinRed hover:text-white transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-half-stroke"></i> <span>Theme Mode</span>
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-2 font-semibold">
+                <div class="py-2 px-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl text-xs uppercase text-latinRed font-bold tracking-wider">Home Layouts</div>
+                <a href="index.html" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Home 1 - Signature Fillings</a>
+                <a href="home-2.html" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Home 2 - Street Vibe</a>
+                
+                <hr class="border-slate-200 dark:border-slate-700 my-1">
+                
+                <a href="about.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">About</a>
+                <a href="menu.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Menu</a>
+                <a href="fillings.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Fillings</a>
+                <a href="catering.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg text-slate-900 dark:text-slate-200 hover:bg-latinRed/10 hover:text-latinRed text-sm">Catering Orders</a>
+                <a href="contact.html" onclick="toggleMobileMenu()" class="px-4 py-2.5 rounded-lg bg-latinRed/10 text-latinRed text-sm font-bold">Contact (Active)</a>
+                
+                <div class="pt-3">
+                    <a href="catering.html" onclick="toggleMobileMenu()" class="block w-full py-3 text-center rounded-xl bg-gradient-to-r from-latinRed to-latinAmber text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-latinRed/30">
+                        Order Catering
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ================= FULL-VIEWPORT HERO BACKGROUND IMAGE ================= -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900 text-white">
+        <div class="absolute inset-0 z-0">
+            <!-- Unique Welcoming Street Food Stall Image -->
+            <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1920&q=80" alt="Contact Us Hero Background" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-latinDark"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center py-32">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-latinRed/20 border border-latinRed/40 text-latinAmber text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
+                <i class="fa-solid fa-headset"></i> Dedicated Concierge & Support Desk
+            </div>
+            
+            <h1 class="font-serif-luxury text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight max-w-4xl mx-auto mb-6">
+                Connect With Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-latinRed to-latinAmber">Culinary Experts</span>
+            </h1>
+            
+            <p class="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+                Whether you are organizing a massive corporate event, booking a private tasting party, or simply inquiring about our daily fresh pastry fillings, our team is at your service.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#contact-main-grid" class="px-8 py-4 rounded-xl bg-gradient-to-r from-latinRed to-latinAmber text-white font-bold text-sm uppercase tracking-wider shadow-2xl shadow-latinRed/50 hover:scale-105 transition">
+                    Open Contact Desk <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+                <a href="tel:18003834627" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-sm uppercase tracking-wider transition">
+                    <i class="fa-solid fa-phone mr-2 text-latinAmber"></i> Direct Helpline
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 1: MODERN MULTI-CHANNEL CONTACT DESK ================= -->
+    <section id="contact-main-grid" class="py-24 bg-white dark:bg-latinDark transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinRed text-xs font-bold uppercase tracking-widest block mb-2">Direct Communications</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Reach Out Through Any Channel</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">We maintain dedicated response teams for catering operations, customer feedback, and wholesale distribution.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Channel Card 1 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-xl hover:border-latinRed/50 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-latinRed/10 text-latinRed flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-xl font-bold text-slate-900 dark:text-white mb-3">Catering & Event Desk</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Planning a wedding, office lunch, or birthday party? Speak directly with our event coordinators for customized menus and bulk pricing.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+                        <a href="mailto:catering@fuegomasa.com" class="text-latinRed dark:text-latinAmber text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:underline">
+                            catering@fuegomasa.com <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Channel Card 2 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-xl hover:border-latinRed/50 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-latinAmber/10 text-latinAmber flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-xl font-bold text-slate-900 dark:text-white mb-3">Flagship Storefront</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Visit our main kitchen in Miami's bustling Culinary District to taste freshly baked golden pastries straight from our ovens.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+                        <span class="text-slate-700 dark:text-slate-300 text-xs font-bold block">450 Calle Sol, Suite 101, Miami, FL</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 3 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-xl hover:border-latinRed/50 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-latinRed/10 text-latinRed flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-xl font-bold text-slate-900 dark:text-white mb-3">Partnerships & Press</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Are you a food blogger, investor, or retail supplier looking to partner with Fuego & Masa? Get in touch with our executive administration.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+                        <a href="mailto:partners@fuegomasa.com" class="text-latinRed dark:text-latinAmber text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:underline">
+                            partners@fuegomasa.com <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 2: ADVANCED INQUIRY FORM & CONCIERGE HOURS ================= -->
+    <section class="py-24 bg-slate-100 dark:bg-[#161616] transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Form Info & Perks -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-latinAmber text-xs font-bold uppercase tracking-widest block">Quick Response Guarantee</span>
+                    <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white leading-tight">Send Us a Direct Message</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Fill out our secure concierge form and receive a comprehensive quote or answer within 2 business hours. Our professional support desk is fully dedicated to your satisfaction.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-3 bg-white dark:bg-latinCard p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-latinRed/10 text-latinRed flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 dark:text-white">Lightning Fast Replies</h4>
+                                <p class="text-[11px] text-slate-500">Average response time under 120 minutes</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-white dark:bg-latinCard p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-latinAmber/10 text-latinAmber flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 dark:text-white">Secure Data Handling</h4>
+                                <p class="text-[11px] text-slate-500">Your contact info is strictly confidential</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-white dark:bg-latinCard p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-latinRed/10 text-latinRed flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 dark:text-white">Dedicated Coordinator</h4>
+                                <p class="text-[11px] text-slate-500">Assigned single point of contact for events</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Full Interactive Contact Form -->
+                <div class="lg:col-span-7 bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl">
+                    <form onsubmit="event.preventDefault(); alert('Message successfully sent to Fuego & Masa concierge!');" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Full Name</label>
+                                <input type="text" required placeholder="Elena Rodriguez" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-latinRed transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Email Address</label>
+                                <input type="email" required placeholder="elena@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-latinRed transition">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Phone Number</label>
+                                <input type="tel" placeholder="(305) 555-0144" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-latinRed transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Department</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-latinRed transition">
+                                    <option>Catering Event Booking</option>
+                                    <option>General Store Inquiry</option>
+                                    <option>Feedback & Compliments</option>
+                                    <option>Wholesale & Distribution</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Detailed Message</label>
+                            <textarea rows="4" required placeholder="Let us know your event dates, guest count, or specific questions..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-latinRed transition resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-latinRed to-latinAmber text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-latinRed/30 hover:scale-[1.01] transition">
+                            Submit Inquiry <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 3: INTERACTIVE MAP & FLAGSHIP DIRECTIONS ================= -->
+    <section class="py-24 bg-white dark:bg-latinDark transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinRed text-xs font-bold uppercase tracking-widest block mb-2">Geographic Location</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Visit Our Flagship Store</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Conveniently situated in Miami's prime culinary zone with dedicated guest parking and express takeout lanes.</p>
+            </div>
+
+            <!-- Interactive Map Wrapper with Modern Styling -->
+            <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-4 shadow-2xl overflow-hidden">
+                <div class="relative w-full h-[500px] rounded-2xl overflow-hidden">
+                    <iframe title="Miami Culinary District Map" class="w-full h-full border-0 filter dark:invert dark:hue-rotate-180 dark:contrast-125" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.671318263539!2d-80.19179022353995!3d25.77417371059954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b692d640b79b%3A0x54e466eef40e4f52!2sDowntown%20Miami%2C%20Miami%2C%20FL!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-latinRed/10 text-latinRed flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Fuego & Masa Kitchen HQ</h4>
+                            <p class="text-xs text-slate-500">450 Calle Sol, Suite 101, Culinary District, Miami, FL 33131</p>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="px-7 py-3 rounded-xl bg-gradient-to-r from-latinRed to-latinAmber text-white text-xs font-bold uppercase tracking-wider hover:scale-105 transition shadow-lg">
+                        Open in Google Maps <i class="fa-solid fa-external-link ml-1.5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 4: DEPARTMENT DIRECTORY CARDS ================= -->
+    <section class="py-24 bg-slate-100 dark:bg-[#161616] transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinAmber text-xs font-bold uppercase tracking-widest block mb-2">Direct Extensions</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Department Directory</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Connect instantly with the exact department handling your specific inquiry.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Dept 1 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-latinRed/10 text-latinRed flex items-center justify-center text-lg mb-4 font-bold">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2">Kitchen Operations</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Questions regarding daily pastry batches, ingredient allergens, and custom fillings.</p>
+                    </div>
+                    <a href="tel:18003834627" class="text-latinRed dark:text-latinAmber text-xs font-bold uppercase tracking-wider hover:underline">
+                        Ext. 101 <i class="fa-solid fa-phone text-[10px] ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Dept 2 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-latinAmber/10 text-latinAmber flex items-center justify-center text-lg mb-4 font-bold">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2">Delivery & Logistics</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Track active delivery drivers, local courier schedules, and packaging safety.</p>
+                    </div>
+                    <a href="tel:18003834627" class="text-latinRed dark:text-latinAmber text-xs font-bold uppercase tracking-wider hover:underline">
+                        Ext. 102 <i class="fa-solid fa-phone text-[10px] ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Dept 3 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-latinRed/10 text-latinRed flex items-center justify-center text-lg mb-4 font-bold">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2">Marketing & Press</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Media kits, influencer partnerships, sponsorships, and community food festivals.</p>
+                    </div>
+                    <a href="tel:18003834627" class="text-latinRed dark:text-latinAmber text-xs font-bold uppercase tracking-wider hover:underline">
+                        Ext. 103 <i class="fa-solid fa-phone text-[10px] ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Dept 4 -->
+                <div class="bg-white dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-latinAmber/10 text-latinAmber flex items-center justify-center text-lg mb-4 font-bold">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2">Executive Office</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Corporate governance, investor relations, and franchise expansion queries.</p>
+                    </div>
+                    <a href="tel:18003834627" class="text-latinRed dark:text-latinAmber text-xs font-bold uppercase tracking-wider hover:underline">
+                        Ext. 104 <i class="fa-solid fa-phone text-[10px] ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 5: COMPREHENSIVE FAQ ACCORDION ================= -->
+    <section class="py-24 bg-white dark:bg-latinDark transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinRed text-xs font-bold uppercase tracking-widest block mb-2">Support Database</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Immediate answers to the most common queries regarding visiting our Miami kitchen.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-latinRed text-sm"></i> What are your daily operating hours?
+                    </h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pl-7">Our flagship kitchen is open Sunday through Thursday from 10:00 AM to 10:00 PM, and Friday to Saturday from 10:00 AM to 11:30 PM EST.</p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-latinRed text-sm"></i> Do you accommodate severe food allergies?
+                    </h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pl-7">Yes, our menu clearly labels vegetarian, gluten-free, and dairy-free options. However, please inform our counter staff or catering desk of any specific allergies prior to ordering.</p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-latinRed text-sm"></i> Is advance booking required for catering trays?
+                    </h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pl-7">We recommend giving us at least 48 hours notice for large party platters and corporate event orders to guarantee fresh pastry preparation and on-time delivery.</p>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-slate-50 dark:bg-latinCard border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-serif-luxury text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-latinRed text-sm"></i> Where can visitors park near Suite 101?
+                    </h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pl-7">Complimentary 30-minute visitor parking stalls are reserved directly in front of our storefront entrance within the Culinary District plaza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION 6: COMMUNITY SHOWCASE & SOCIAL GRID ================= -->
+    <section class="py-24 bg-slate-100 dark:bg-[#161616] transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-latinRed text-xs font-bold uppercase tracking-widest block mb-2">Instagram Community</span>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Tag #FuegoAndMasa</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Follow our social channels and share your golden pastry moments with food lovers worldwide.</p>
+            </div>
+
+            <!-- 4 Column Unique Visual Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="rounded-3xl overflow-hidden aspect-[1/1] shadow-xl group relative">
+                    <!-- Unique Taco/Street Food Image -->
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" alt="Street Food Scene 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+                        <span class="text-white text-xs font-bold"><i class="fa-brands fa-instagram mr-1 text-latinAmber"></i> @FuegoMasaMiami</span>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden aspect-[1/1] shadow-xl group relative">
+                    <!-- Unique Grilled Food/Street Food Image -->
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" alt="Street Food Scene 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+                        <span class="text-white text-xs font-bold"><i class="fa-brands fa-instagram mr-1 text-latinAmber"></i> @FuegoMasaMiami</span>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden aspect-[1/1] shadow-xl group relative">
+                    <!-- Unique Fresh Ingredients/Salsa Image -->
+                    <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=500&q=80" alt="Street Food Scene 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+                        <span class="text-white text-xs font-bold"><i class="fa-brands fa-instagram mr-1 text-latinAmber"></i> @FuegoMasaMiami</span>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden aspect-[1/1] shadow-xl group relative">
+                    <!-- Unique Vibrant Market Scene Image -->
+                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=500&q=80" alt="Street Food Scene 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-5">
+                        <span class="text-white text-xs font-bold"><i class="fa-brands fa-instagram mr-1 text-latinAmber"></i> @FuegoMasaMiami</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= ADVANCED DARK FOOTER ================= -->
+    <footer class="bg-[#0b0f17] text-slate-400 pt-16 pb-12 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-slate-800/60">
+                
+                <!-- Col 1: Brand Info & Social Icons -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-latinRed to-latinAmber flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-latinRed/30">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif-luxury text-lg font-bold text-white tracking-tight leading-none">Fuego & Masa</span>
+                            <span class="text-[10px] uppercase tracking-widest text-latinRed font-semibold mt-0.5">Latin Street Kitchen</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+                        Authentic Latin street food kitchen empowering your cravings with golden flaky pastries, rich slow-cooked fillings, and secret house chimichurri.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-latinRed hover:border-latinRed transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-latinRed hover:border-latinRed transition"><i class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-latinRed hover:border-latinRed transition"><i class="fa-brands fa-twitter text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Pages -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest">Pages</h4>
+                    <ul class="space-y-3 text-xs font-medium">
+                        <li><a href="index.html" class="hover:text-latinRed transition">Home-1 (Fillings)</a></li>
+                        <li><a href="home-2.html" class="hover:text-latinRed transition">Home-2 (Street Vibe)</a></li>
+                        <li><a href="about.html" class="hover:text-latinRed transition">About Us</a></li>
+                        <li><a href="menu.html" class="hover:text-latinRed transition">Menu</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Tools & Info -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest">Tools & Info</h4>
+                    <ul class="space-y-3 text-xs font-medium">
+                        <li><a href="menu.html" class="hover:text-latinRed transition">Menu Comparison</a></li>
+                        <li><a href="catering.html" class="hover:text-latinRed transition">Catering Calculator</a></li>
+                        <li><a href="catering.html" class="hover:text-latinRed transition">Catering FAQs</a></li>
+                        <li><a href="contact.html" class="text-latinRed font-bold transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Get in Touch -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest">Get in Touch</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="mailto:catering@fuegomasa.com" class="flex items-center gap-2.5 hover:text-latinRed transition">
+                                <i class="fa-solid fa-envelope text-latinRed text-sm w-4"></i> catering@fuegomasa.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:18003834627" class="flex items-center gap-2.5 hover:text-latinRed transition">
+                                <i class="fa-solid fa-phone text-latinRed text-sm w-4"></i> 1-800-FUEGO-MASA
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-location-dot text-latinRed text-sm w-4 mt-0.5"></i>
+                                <span class="leading-relaxed">450 Calle Sol, Suite 101, Culinary District, Miami, FL 33131</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Policies -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Empanada & Latin Street Food Kitchen. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Utilities -->
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+
+        // Dark/Light Theme Switcher
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        // RTL / LTR Switcher
+        function toggleRTL() {
+            const html = document.documentElement;
+            const btnText = document.getElementById('rtlBtnText');
+            const mobileRtlText = document.getElementById('mobileRtlText');
+            if (html.getAttribute('dir') === 'rtl') {
+                html.setAttribute('dir', 'ltr');
+                if(btnText) btnText.innerText = 'RTL';
+                if(mobileRtlText) mobileRtlText.innerText = 'Switch RTL';
+                localStorage.dir = 'ltr';
+            } else {
+                html.setAttribute('dir', 'rtl');
+                if(btnText) btnText.innerText = 'LTR';
+                if(mobileRtlText) mobileRtlText.innerText = 'Switch LTR';
+                localStorage.dir = 'rtl';
+            }
+        }
+
+        // Check initial theme preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Check initial RTL preference
+        if (localStorage.dir === 'rtl') {
+            document.documentElement.setAttribute('dir', 'rtl');
+            if(document.getElementById('rtlBtnText')) document.getElementById('rtlBtnText').innerText = 'LTR';
+            if(document.getElementById('mobileRtlText')) document.getElementById('mobileRtlText').innerText = 'Switch LTR';
+        }
+    </script>
+</body>
+</html>
